@@ -1,5 +1,6 @@
-#executables
+#Make Install Output Files
 dwm
-
-#configs
+drw.o
+dwm.o
+util.o
 config.h
