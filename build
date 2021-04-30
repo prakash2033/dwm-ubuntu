@@ -1,4 +1,5 @@
 sudo apt-get install libx11-dev libxft-dev libxinerama-dev -y
 sudo make & sudo make install
 sudo apt remove libxft2 -y
+sudo apt install sxiv -y
 
