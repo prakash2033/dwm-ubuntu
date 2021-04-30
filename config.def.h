@@ -95,7 +95,9 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 
-	{ MODKEY,                       XK_F3,          spawn,          SHCMD("displayselect") },
+	{ MODKEY,                       XK_w,      spawn,          SHCMD("$BROWSER") },
+
+	{ MODKEY,                       XK_F3,     spawn,          SHCMD("displayselect") },
 
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
