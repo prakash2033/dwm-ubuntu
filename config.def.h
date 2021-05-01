@@ -99,6 +99,22 @@ static Key keys[] = {
 
 	{ MODKEY,                       XK_F3,     spawn,          SHCMD("displayselect") },
 
+	{ MODKEY,                       XK_minus,       spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -5%; kill -44 $(pidof dwmblocks)") },
+        { MODKEY|ShiftMask,             XK_minus,       spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -15%; kill -44 $(pidof dwmblocks)") },
+        { MODKEY,                       XK_equal,       spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +5%; kill -44 $(pidof dwmblocks)") },
+        { MODKEY|ShiftMask,             XK_equal,       spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +15%; kill -44 $(pidof dwmblocks)") },
+
+	{ 0, XF86XK_AudioMute,          spawn,          SHCMD("amixer set Master toggle; kill -44 $(pidof dwmblocks)") },
+        { 0, XF86XK_AudioRaiseVolume,   spawn,          SHCMD("amixer set Master 10%+; kill -44 $(pidof dwmblocks)") },
+        { 0, XF86XK_AudioLowerVolume,   spawn,          SHCMD("amixer set Master 10%-; kill -44 $(pidof dwmblocks)") },
+        { 0, XF86XK_AudioMicMute,       spawn,          SHCMD("pactl set-source-mute @DEFAULT_SOURCE@ toggle") },
+        { 0, XF86XK_PowerOff,           spawn,          SHCMD("sysact") },
+        { 0, XF86XK_WWW,                spawn,          SHCMD("$BROWSER") },
+        { 0, XF86XK_ScreenSaver,        spawn,          SHCMD("slock & xset dpms force off; mpc pause; pauseallmpv") },
+        { 0, XF86XK_MonBrightnessUp,    spawn,          SHCMD("xbacklight -inc 15") },
+        { 0, XF86XK_MonBrightnessDown,  spawn,          SHCMD("xbacklight -dec 15") },
+
+
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
