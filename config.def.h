@@ -35,6 +35,7 @@ static const Rule rules[] = {
 	{ "Firefox",  		NULL,       NULL,       1 << 8,       0,           -1 },
 	{ "Teams",    		NULL,       NULL,       1 << 7,       0,           -1 },
 	{ "chrome",    		NULL,       NULL,       1 << 4,       0,           -1 },
+	{ "Thunderbird",  	NULL,       NULL,       1 << 6,       0,           -1 },
 };
 
 /* layout(s) */
@@ -99,6 +100,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 
+
+	{ MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("firefox") },
 	{ MODKEY,                       XK_w,      spawn,          SHCMD("$BROWSER") },
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD(TERMINAL " -e sudo nmtui") },
 	{ MODKEY,                       XK_r,      spawn,          SHCMD(TERMINAL " -e ranger") },
