@@ -101,6 +101,8 @@ static Key keys[] = {
 
 	{ MODKEY,                       XK_w,      spawn,          SHCMD("$BROWSER") },
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD(TERMINAL " -e sudo nmtui") },
+	{ MODKEY,                       XK_r,      spawn,          SHCMD(TERMINAL " -e ranger") },
+        { MODKEY|ShiftMask,             XK_r,      spawn,          SHCMD(TERMINAL " -e htop") },
 
 
 	{ MODKEY,                       XK_F3,     spawn,          SHCMD("displayselect") },
@@ -110,6 +112,13 @@ static Key keys[] = {
         { MODKEY|ShiftMask,             XK_minus,       spawn,     SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -15%; kill -44 $(pidof dwmblocks)") },
         { MODKEY,                       XK_equal,       spawn,     SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +5%; kill -44 $(pidof dwmblocks)") },
         { MODKEY|ShiftMask,             XK_equal,       spawn,     SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +15%; kill -44 $(pidof dwmblocks)") },
+
+	{ 0,                            XK_Print,       spawn,          SHCMD("maim pic-full-$(date '+%y%m%d-%H%M-%S').png") },
+        { ShiftMask,                    XK_Print,       spawn,          SHCMD("maimpick") },
+        { MODKEY,                       XK_Print,       spawn,          SHCMD("dmenurecord") },
+        { MODKEY|ShiftMask,             XK_Print,       spawn,          SHCMD("dmenurecord kill") },
+        { MODKEY,                       XK_Delete,      spawn,          SHCMD("dmenurecord kill") },
+        { MODKEY,                       XK_Scroll_Lock, spawn,          SHCMD("killall screenkey || screenkey &") },
 
 	{ 0, XF86XK_AudioMute,          spawn,          SHCMD("amixer set Master toggle; kill -44 $(pidof dwmblocks)") },
         { 0, XF86XK_AudioRaiseVolume,   spawn,          SHCMD("amixer set Master 10%+; kill -44 $(pidof dwmblocks)") },
