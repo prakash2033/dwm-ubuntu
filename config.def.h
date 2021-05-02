@@ -98,11 +98,12 @@ static Key keys[] = {
 	{ MODKEY,                       XK_w,      spawn,          SHCMD("$BROWSER") },
 
 	{ MODKEY,                       XK_F3,     spawn,          SHCMD("displayselect") },
+	{ MODKEY,                       XK_BackSpace,   spawn,     SHCMD("sysact") },
 
-	{ MODKEY,                       XK_minus,       spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -5%; kill -44 $(pidof dwmblocks)") },
-        { MODKEY|ShiftMask,             XK_minus,       spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -15%; kill -44 $(pidof dwmblocks)") },
-        { MODKEY,                       XK_equal,       spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +5%; kill -44 $(pidof dwmblocks)") },
-        { MODKEY|ShiftMask,             XK_equal,       spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +15%; kill -44 $(pidof dwmblocks)") },
+	{ MODKEY,                       XK_minus,       spawn,     SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -5%; kill -44 $(pidof dwmblocks)") },
+        { MODKEY|ShiftMask,             XK_minus,       spawn,     SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -15%; kill -44 $(pidof dwmblocks)") },
+        { MODKEY,                       XK_equal,       spawn,     SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +5%; kill -44 $(pidof dwmblocks)") },
+        { MODKEY|ShiftMask,             XK_equal,       spawn,     SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +15%; kill -44 $(pidof dwmblocks)") },
 
 	{ 0, XF86XK_AudioMute,          spawn,          SHCMD("amixer set Master toggle; kill -44 $(pidof dwmblocks)") },
         { 0, XF86XK_AudioRaiseVolume,   spawn,          SHCMD("amixer set Master 10%+; kill -44 $(pidof dwmblocks)") },
