@@ -100,7 +100,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 
-
+	{ MODKEY,             		XK_n,      spawn,          SHCMD("newsboat") },
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("firefox") },
 	{ MODKEY,                       XK_w,      spawn,          SHCMD("$BROWSER") },
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD(TERMINAL " -e sudo nmtui") },
@@ -127,6 +127,11 @@ static Key keys[] = {
         { 0, XF86XK_AudioRaiseVolume,   spawn,          SHCMD("amixer set Master 10%+; kill -44 $(pidof dwmblocks)") },
         { 0, XF86XK_AudioLowerVolume,   spawn,          SHCMD("amixer set Master 10%-; kill -44 $(pidof dwmblocks)") },
         { 0, XF86XK_AudioMicMute,       spawn,          SHCMD("pactl set-source-mute @DEFAULT_SOURCE@ toggle") },
+	{ 0, XF86XK_AudioPrev,          spawn,          SHCMD("spotify_control prev") },
+        { 0, XF86XK_AudioNext,          spawn,          SHCMD("spotify_control next") },
+        { 0, XF86XK_AudioPause,         spawn,          SHCMD("spotify_control playpause") },
+        { 0, XF86XK_AudioPlay,          spawn,          SHCMD("spotify_control playpause") },
+        { 0, XF86XK_AudioStop,          spawn,          SHCMD("spotify_control stop") },
         { 0, XF86XK_PowerOff,           spawn,          SHCMD("sysact") },
         { 0, XF86XK_WWW,                spawn,          SHCMD("$BROWSER") },
         { 0, XF86XK_ScreenSaver,        spawn,          SHCMD("slock & xset dpms force off; mpc pause; pauseallmpv") },
