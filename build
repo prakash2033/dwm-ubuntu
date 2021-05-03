@@ -1,5 +1,1 @@
-#Do not install sxiv as it will bring along libxft2 and viceversa
-sudo apt-get install libx11-dev libxft-dev libxinerama-dev -y
 sudo make & sudo make install
-sudo apt remove libxft2 -y
-
